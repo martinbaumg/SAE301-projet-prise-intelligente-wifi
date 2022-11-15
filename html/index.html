@@ -48,30 +48,35 @@
 
     // créer une fonction pour envoyer un message quand je clique sur un bouton
     function send_message1(){
+        console.log("ON - prise 1");
         message = new Paho.MQTT.Message('{"sender": "webservice", "message_type": "set", "prise": "prise1", "state": true}');
         message.destinationName = "prises";
         mqtt.send(message);
     }
 
     function send_message2(){
+        console.log("OFF - prise 1");
         message = new Paho.MQTT.Message('{"sender": "webservice", "message_type": "set", "prise": "prise1", "state": false}');
         message.destinationName = "prises";
         mqtt.send(message);
     }
 
     function send_message3(){
+        console.log("ON - prise 2");
         message = new Paho.MQTT.Message('{"sender": "webservice", "message_type": "set", "prise": "prise2", "state": true}');
         message.destinationName = "prises";
         mqtt.send(message);
     }
 
     function send_message4(){
+        console.log("OFF - prise 2");
         message = new Paho.MQTT.Message('{"sender": "webservice", "message_type": "set", "prise": "prise2", "state": false}');
         message.destinationName = "prises";
         mqtt.send(message);
     }
 
     function send_message5(){
+        console.log("ON - prise 1 et 2");
         message = new Paho.MQTT.Message('{"sender": "webservice", "message_type": "set", "prise": "prise1", "state": true}');
         message2 = new Paho.MQTT.Message('{"sender": "webservice", "message_type": "set", "prise": "prise2", "state": true}');
         message.destinationName = "prises";
@@ -81,6 +86,7 @@
     }
 
     function send_message6(){
+        console.log("OFF - prise 1 et 2");
         message = new Paho.MQTT.Message('{"sender": "webservice", "message_type": "set", "prise": "prise1", "state": false}');
         message2 = new Paho.MQTT.Message('{"sender": "webservice", "message_type": "set", "prise": "prise2", "state": false}');
         message.destinationName = "prises";
